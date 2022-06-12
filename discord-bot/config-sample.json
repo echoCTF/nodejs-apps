@@ -3,10 +3,12 @@
 	"allowedRole": "BUGHUNTER",
 	"autoRole": "offense",
 	"token": "<BOT TOKEN>",
-  "dbhost": "localhost",
-  "dbuser": "root",
-  "dbpass": "",
-  "dbname": "echoCTF",
-	"defaultGuildID": "", 
-	"lastID": 0
+	"dbhost": "localhost",
+	"dbuser": "root",
+	"dbpass": "",
+	"dbname": "echoCTF",
+	"defaultGuildID": "",
+	"lastID": 0,
+	"baseURL": "https://yoursite.com",
+	"activityName": "myechoctf instance name"
 }

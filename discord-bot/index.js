@@ -68,8 +68,8 @@ function user_lookup(message,username)
      .setColor('#94c11f')
      .setTitle(entry.username)
      .setDescription(entry.bio)
-     .setURL(`https://echoctf.red/profile/${entry.profile_id}`) // Their name, I use a different way, this should work
-     .setThumbnail('https://echoctf.red/images/avatars/'+entry.avatar) // Their icon
+     .setURL(`${config.baseURL}/profile/${entry.profile_id}`) // Their name, I use a different way, this should work
+     .setThumbnail('${config.baseURL}/images/avatars/'+entry.avatar) // Their icon
      .addField('Rank',entry.rank,true)
      .addField('Points',entry.points,true)
      .addField('Headshots',entry.headshots,true);
@@ -89,8 +89,8 @@ function target_lookup(message,target)
      .setColor('#94c11f')
      .setTitle(results[0].fqdn+" "+results[0].ip+" ID#"+results[0].id)
      .setDescription(results[0].purpose)
-     .setURL(`https://echoctf.red/target/${results[0].id}`) // Their name, I use a different way, this should work
-     .setThumbnail('https://echoctf.red/images/targets/_'+results[0].name+'.png') // Their icon
+     .setURL(`${config.baseURL}/target/${results[0].id}`) // Their name, I use a different way, this should work
+     .setThumbnail('${config.baseURL}/images/targets/_'+results[0].name+'.png') // Their icon
      .addField('Flags/Services',results[0].treasures+' / '+results[0].findings,true)
      .addField('Headshots',results[0].headshots,true);
     return message.channel.send(memberembed);
@@ -191,7 +191,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}! ${config.defaultGuildID}`);
-  client.user.setActivity("echoCTF.RED");
+  client.user.setActivity(`${config.activityName}`);
   connection.connect(function(err) {
       pollingLoop();
     });
